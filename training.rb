@@ -12,7 +12,7 @@ class Operations
         puts "the modulus is #{g%h}"
     end
     def exi
-        puts "The calculator has done its job!,Exit!"
+        puts "The calculator has done its job!,Exit! thank you for using"
     end
 
     def calling(testarg,secondarg)
@@ -50,3 +50,5 @@ end
 test=Operations.new
 
 test.calling(test,$inp)
+
+#result is done!

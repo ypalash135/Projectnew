@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherapp</title>
+    <style>
+        body{
+            background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-blue-sky-and-white-clouds-sunny-weather-picture-image_1055722.jpg');
+            width: 100%;
+            height: 100%;
+    
+        }
+        h1{
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(114, 34, 9);
+        }
+        div{
+            text-align: center;
+            display: flexR;
+        }
+        div{
+            display: block;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Get the weather of any City</h1>
+    <div>
+        <form action="">
+            <input type="search" placeholder="Enter city" id="search">
+            <button type="submit">CLICK</button>
+        </form>
+        
+    
+    </div>
+
+
+
+    <div id="id1">
+        
+    </div>
+    <script>
+            
+       const form=document.querySelector("form");
+       const weather=document.querySelector('#id1');
+    const search=document.querySelector('#search');
+
+        form.addEventListener(
+            "submit",function(e){
+                getweather(search.value)
+                e.preventDefault();
+            }
+        )
+
+        const getweather= async (city)=>{
+            const url=`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}&rapidapi-key=2607a1d6e7msh30993fcda19fa84p1db7e6jsn49d81fe25740`
+            const response=await fetch(url);
+            const data=await response.json();
+            return showWeather(data)
+
+        }
+        const showWeather=(data)=>{
+            console.log(data)
+                weather.innerHTML=
+        `<p>Temprature is: ${data.current.temp_c}<p>
+        <p> cloud : ${data.current.cloud} </p>
+        <p>pressure is : ${data.current.pressure_in}</p>
+        <p> Wind speed is : ${data.current.wind_kph}</p>
+        <p> precipitation : ${data.current.precip_in}</p>`
+        }
+
+      //api:let api2=`https://weatherapi-com.p.rapidapi.com/current.json?q=${place}&rapidapi-key=2607a1d6e7msh30993fcda19fa84p1db7e6jsn49d81fe25740`;
+    </script>
+</body>
+</html>
+
