@@ -218,7 +218,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
-  pry (~> 0.14.1)
+  pry
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   selenium-webdriver

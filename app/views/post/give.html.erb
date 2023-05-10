@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+<p><%= @post.publishedAt %></p>
+
+<ul>
+  <li><%= link_to "Edit", posts_edit_path(@post) %></li>
+  <li><%= link_to "Destroy",  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
